@@ -1,0 +1,20 @@
+{
+  "name": "lnug-11months",
+  "version": "1.0.0",
+  "description": "LNUG Fictional Talk Agenda: November 2024 - August 2025 - Slidev Presentation",
+  "main": "index.js",
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build",
+    "export": "slidev export",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["slidev", "presentation", "lnug", "nodejs"],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@slidev/cli": "^52.2.4",
+    "@slidev/theme-default": "^0.25.0"
+  }
+}

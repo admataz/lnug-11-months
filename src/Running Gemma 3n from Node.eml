@@ -1,0 +1,1198 @@
+Delivered-To: admataz@gmail.com
+Received: by 2002:a05:7022:6613:b0:a7:5019:8700 with SMTP id ay19csp3361187dlb;
+        Tue, 1 Jul 2025 09:58:19 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEBSuESAvAoniPVRGVdY4rn8QlX6I8JvlyVu7kzbTOuCvPPUsEpyPVf3QOasRI1T92NeE9q
+X-Received: by 2002:ae9:ea14:0:b0:7ca:cd16:b433 with SMTP id af79cd13be357-7d443992c2emr1886295185a.31.1751389099548;
+        Tue, 01 Jul 2025 09:58:19 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1751389099; cv=none;
+        d=google.com; s=arc-20240605;
+        b=P+dphTq6XIIKDtmmPEREYxk9omaLzXwy5LaA2ddJvbfwRbD29j77qmLyopp7tf3b9n
+         5M9Y6Gv5RVZXSn0e7O8fqmDELqBJrcmHverdP4hU8MsPsXPvdHTM6C2pLN52BP+F43nl
+         Z+n7wiXTPoweR3GMq1h1Afz5/5CT0lilNlt5SwaaV0QGSrTnkzqgY6Kxrq6mmO++Oq/C
+         LYIgJq1SBfY042WEvNg/HP3xbflyqQORKVspWvYLaX8C78IUdxHHM0Wr35HRO0wQrTEH
+         xvSgCpaQN3duUYJGYVdoPfvn++hkIeq84vawuzaOmW5raFJ+f9o/MiX2tW+km/LGCsE1
+         ATlg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:list-unsubscribe-post:list-unsubscribe:list-id:subject
+         :message-id:mime-version:from:date:dkim-signature:dkim-signature;
+        bh=QcEOFYbpLNLschqqspn0rwasdmLc3Y34ehQVPxEFAgM=;
+        fh=jdhCwPcIMYWtrBhw8GPPLldrZfeUfzGK+jUfe7v69i4=;
+        b=fSyjTPBs9rJZfl/cwLRf/23t84b/o17DhvJgbYTsF5cxnjvLS83LxfSdUhldtMexb5
+         JHZ00adc180TASLYslv17V2aAa7mYdqBkorOUejZ+DLixXsns7yiBc8g7ZKxikJmS45+
+         +s0wO2eGLqUDbg5oK8Nqp4Cb0fcH7RTJaDsrsa78nhgy7AKM71e2mGyM2nuWLEtqnT4a
+         XYzuDISMIH+u0U7nZ7oGbv/2XAx3vlrae47KN2Ga4lkKCjA6mGLNMhcyrOBsL9cOdO25
+         6fFTbu/uAHfKwBKBeqzwakzTzchRsL5LCl5lIgosFGEhPrrfh+luHkMBaiv3d2m/A96W
+         A7+Q==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@cooperpress.com header.s=s1 header.b=JxDc4ELS;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=qHOcvrGN;
+       spf=pass (google.com: domain of bounces+3465002-a96d-admataz=gmail.com@sg.cooperpress.com designates 168.245.52.89 as permitted sender) smtp.mailfrom="bounces+3465002-a96d-admataz=gmail.com@sg.cooperpress.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=cooperpress.com
+Return-Path: <bounces+3465002-a96d-admataz=gmail.com@sg.cooperpress.com>
+Received: from o3.ptr904.cooperpress.com (o3.ptr904.cooperpress.com. [168.245.52.89])
+        by mx.google.com with ESMTPS id af79cd13be357-7d44325cea2si1031300985a.394.2025.07.01.09.58.19
+        for <admataz@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 01 Jul 2025 09:58:19 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+3465002-a96d-admataz=gmail.com@sg.cooperpress.com designates 168.245.52.89 as permitted sender) client-ip=168.245.52.89;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@cooperpress.com header.s=s1 header.b=JxDc4ELS;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=qHOcvrGN;
+       spf=pass (google.com: domain of bounces+3465002-a96d-admataz=gmail.com@sg.cooperpress.com designates 168.245.52.89 as permitted sender) smtp.mailfrom="bounces+3465002-a96d-admataz=gmail.com@sg.cooperpress.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=cooperpress.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cooperpress.com;
+	h=content-type:from:mime-version:subject:list-id:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:feedback-id:from:subject:to;
+	s=s1; bh=QcEOFYbpLNLschqqspn0rwasdmLc3Y34ehQVPxEFAgM=;
+	b=JxDc4ELSFuVstXvbLHV65hq/UJFiOseDnKu9lHfEqub5zK+kQTWaX+IZ0eWPXyZFaE5o
+	noBYgHh7Fd1c9yxlBVKerzxDYdk0xbxI1IGv4Nx5zL54Ogjr+2NtWutSz+4D+6DjK3QQhI
+	YdoCFTn6INw23wWg//XFpnhmrJBr/Ct7T9MS8Fxel8aiLFp9mbUDwvoRqQsyU7sBlm65uL
+	hYlidsQBoyugvBVEhsh1Knqiny2V9PqghN0jRCQcsjvceIDZPwdNl7XuXw3jxWkLmUcRgQ
+	/Xzdbwx/VkuId+PZ2WbufcuvN3uS4ZtSw1YcoJQzwvoP4DLAWImYaFVGhbLw5nPw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:list-id:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:feedback-id:from:subject:to;
+	s=smtpapi; bh=QcEOFYbpLNLschqqspn0rwasdmLc3Y34ehQVPxEFAgM=;
+	b=qHOcvrGNMSBSmMhdPsii64cBB9hwmqna7LOTCgm8eoRnoVyr5YKX8rF8URVdTYdRReGn
+	WhqAuUlYWWNir1COj7Gzjr4iHNjWlUqqAJ6/CqRZLfhUgpYas/2cbGxU4lkr6K8hkYpkNE
+	Pg5kCOI6i0tBWNOqyWfNtKc3C4kcpmxtk=
+Received: by recvd-canary-5bdb784f7f-5d6nm with SMTP id recvd-canary-5bdb784f7f-5d6nm-1-686401CB-22
+	2025-07-01 15:42:03.883711037 +0000 UTC m=+2392406.808200602
+Received: from MzQ2NTAwMg (unknown)
+	by geopod-ismtpd-8 (SG) with HTTP
+	id h4_V4v-HSi2vWbr0Bk5XSg
+	Tue, 01 Jul 2025 15:42:03.715 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=a8666fafdf289c58742a2269e7f33431ac32b1839875d9801f37fde6edca
+Date: Tue, 01 Jul 2025 16:58:18 +0000 (UTC)
+From: Node Weekly <node@cooperpress.com>
+Mime-Version: 1.0
+Message-ID: <h4_V4v-HSi2vWbr0Bk5XSg@geopod-ismtpd-8>
+Subject: Running Gemma 3n from Node
+List-Id: Node Weekly <node@cooperpress.com>
+List-Unsubscribe: 
+ <https://moorpark.cooperpress.com/one-click-unsubscribe/3f65fd1f6e>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EnVKR798JLwCfWIiKs7AIdhvmtp09smjPb+bWrTsnBG99oTgAHsdEZrYVf?=
+ =?us-ascii?Q?lIcCorG+yfqESckwfoTTj3gSNAWwB=2FNmdUV3DPR?=
+ =?us-ascii?Q?fbJYabZY=2FdIFTIHogv7Mbi6+3MyyV2yzUJCReSw?=
+ =?us-ascii?Q?nHDbtShdFeYQgUv5RpU3=2FaxlJ88yjUACbmJCaGU?=
+ =?us-ascii?Q?Uoxemtbm3EBPwuRqcq00Jb9HzF7buqk45IdQlgQ?=
+ =?us-ascii?Q?T7Kus=2F82W9oiTZcOpzxOEVCt41ws1HeYLs4xPbw?= =?us-ascii?Q?QodT?=
+To: Admataz@gmail.com
+X-Entity-ID: u001.h4Kgfmcav6hgj0uTdR9Khg==
+
+--a8666fafdf289c58742a2269e7f33431ac32b1839875d9801f37fde6edca
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Plus a recap of modern Node.js features and patterns. |
+
+#=E2=80=8B584 =E2=80=94 July 1, 2025
+
+Read on the Web ( https://nodeweekly.com/issues/584 )
+
+Together with
+
+( https://coderabbit.link/GAJouVh )
+
+* MODERN NODE.JS PATTERNS FOR 2025=20
+( https://kashw1n.com/blog/nodejs-2025/ ) =E2=80=94 We=E2=80=99ve reached t=
+he half
+way point for the year, so why not take a moment to reflect on
+the potential of Node as it stands right now? Ashwin reminds us
+of various aspects including the use of ES modules, built-in Web
+APIs, the test runner, watch mode, the permission model, import
+maps, and more.
+  -- Ashwin
+
+
+* NODE V22.17.0 (LTS) RELEASED=20
+( https://nodejs.org/en/blog/release/v22.17.0 ) =E2=80=94 A notable LTS
+release as assert.partialDeepStrictEqual() gets promoted to
+stable along with numerous long-time experimental APIs/functions,
+and a few Node 24 features get backported.
+  -- Antoine du Hamel
+
+
+=F0=9F=92=A1 Node v24.3.0 (Current)=20
+( https://nodejs.org/en/blog/release/v24.3.0 ) has been released,
+with no significant new features.
+
+* CODERABBIT=E2=80=99S FREE AI CODE REVIEWS IN IDE - VS CODE, CURSOR,
+WINDSURF ( https://coderabbit.link/GAJouVh ) =E2=80=94 Code Rabbit brings
+AI code reviews to VS Code, Cursor & Windsurf. Get line-by-line
+reviews, one-click fixes & codebase-aware feedback - all free in
+your IDE. Seamlessly integrates with git workflows. Install the
+extension & start reviewing! ( https://coderabbit.link/GAJouVh )
+  -- CodeRabbit (SPONSOR)
+
+
+* ECMA INTERNATIONAL APPROVES ECMASCRIPT 2025: WHAT=E2=80=99S NEW?=20
+( https://2ality.com/2025/06/ecmascript-2025.html ) =E2=80=94 The Ecma
+General Assembly has approved the ES2025 language specification,
+which you can read in full here ( https://tc39.es/ecma262/2025/ ) , or you =
+can enjoy Dr. Axel=E2=80=99s more succinct explainer instead.
+  -- Dr. Axel Rauschmayer
+
+
+* SECURE YOUR EXPRESS APIS IN 5 MINUTES WITH CEDAR=20
+( https://aws.amazon.com/blogs/opensource/secure-your-application-apis-in-5=
+-minutes-with-cedar/ )
+ =E2=80=94 Cedar ( https://www.cedarpolicy.com/en ) is a language and
+spec for defining permissions and evaluating them. Its new
+authorization-for-expressjs=20
+( https://github.com/cedar-policy/authorization-for-expressjs )
+enables Cedar-based authorization for Express.js apps.
+  -- Trevor Schiavone (AWS)
+
+
+IN BRIEF:
+
+* =F0=9F=A6=8B The Node.js project has an official Bluesky account=20
+( https://bsky.app/profile/nodejs.org ) where updates are shared,
+but the team wants your input into what sort of content they
+should post. ( https://github.com/nodejs/bluesky/discussions/140 )=20
+
+* Ryan Dahl checks in with a quick update on the ongoing
+JavaScript=E2=84=A2 trademark dispute=20
+( https://deno.com/blog/deno-v-oracle4 ). Oracle has about a month
+to respond in full to Deno's cancellation petition.
+
+* The official Node blog is celebrating June's Pride Month with a
+look at the concept of identity=20
+( https://nodejs.org/en/blog/community/2025-pride ) and a profile
+of Emilia Smith=20
+( https://nodejs.org/en/blog/community/2025-06-28-Emelia-Smith )
+who made some early, notable contributions to Node.js.
+
+V8: * SPECULATIVE OPTIMIZATIONS FOR WEBASSEMBLY USING DEOPTS
+AND INLINING ( https://v8.dev/blog/wasm-speculative-optimizations )  =E2=80=
+=94 A very technical post from the V8 team about two significant
+new optimizations in the V8 engine that make WebAssembly code run
+much faster.
+  -- Daniel Lehmann and Matthias Liedtke (V8)
+
+
+=F0=9F=93=84 How to Use NestJS as a Signaling Server for WebRTC Video Chat=20
+( https://www.telerik.com/blogs/how-to-use-nestjs-signaling-server-webrtc-v=
+ideo-chat )
+  Christian Nwamba
+
+=F0=9F=93=84 How to Write Compelling Software Release Announcements=20
+( https://refactoringenglish.com/chapters/release-announcements/ )
+Michael Lynch
+
+=F0=9F=93=BA Using Claude Code to Build a GitHub Actions Workflow=20
+( https://www.youtube.com/watch?v=3DVC6dmPcin2E ) =E2=80=93 Simon takes a
+Python-oriented approach but you could just as easily tell Claude
+to use JavaScript or even shell scripting here. Simon Willison
+
+=F0=9F=92=AC Why Does My Node Multiplayer Game Lag at 500 Players with Low
+CPU? ( https://news.ycombinator.com/item?id=3D44389408 ) =E2=80=93 A public
+discussion. Hacker News
+
+=F0=9F=9B=A0 Code & Tools
+
+* TRANSFORMERS.JS 3.6: NOW YOU CAN RUN GEMMA 3N FROM NODE=20
+( https://github.com/huggingface/transformers.js/releases/tag/3.6.0 )
+ =E2=80=94 Transformers.js brings the power of Hugging Face=E2=80=99s popul=
+ar
+Python Transformers library into the world of JavaScript,
+enabling the use of various machine learning models for NLP,
+vision, audio processing, and more. The big feature in v3.6 is
+support for Google=E2=80=99s new Gemma 3n model.=20
+( https://developers.googleblog.com/en/introducing-gemma-3n-developer-guide=
+/ )
+
+  -- Hugging Face
+
+
+=F0=9F=92=A1 In mildly related news, Meridius Labs has been building an
+unofficial library for working with the new Apple Foundation
+models ( https://github.com/Meridius-Labs/apple-on-device-ai ) on
+macOS Tahoe.
+
+* REAL-DEVICE TESTING FOR IOS SAFARI, NOW PLAYWRIGHT-FRIENDLY=20
+( https://www.browserstack.com/docs/automate/playwright/playwright-ios?utm_=
+source=3Dnewsletter&utm_medium=3DPR&utm_platform=3D&utm_content=3Dnew-launc=
+hes-updates&utm_campaign=3DPR-12-Jun-2025-iOS-Playwright&utm_campaigncode=
+=3D701OW00000NyIRcYAN&utm_term=3Dnodeweekly )
+ =E2=80=94 Curious how your web app behaves on iOS Safari? You can now
+run Playwright tests on real iOS devices via BrowserStack.
+  -- BrowserStack (SPONSOR)
+
+
+* REPOMIX 1.0: PACK YOUR CODEBASE INTO AI-FRIENDLY FORMATS=20
+( https://repomix.com/ ) =E2=80=94 Enter a GitHub URL and choose various
+settings for the output (XML, MD, etc). It=E2=80=99s Node.js-based and
+available to use in a library-like form for your own tooling
+creations too. v1.0=20
+( https://github.com/yamadashy/repomix/releases/tag/v1.0.0 ) is
+essentially a =E2=80=98this is stable and complete now=E2=80=99 release.
+GitHub repo. ( https://github.com/yamadashy/repomix )
+  -- Kazuki Yamada
+
+
+* MARKED 16.0: A FAST MARKDOWN PARSER AND COMPILER=20
+( https://marked.js.org/ ) =E2=80=94 Demo here=20
+( https://marked.js.org/demo/ ) to see it in action. GitHub repo.=20
+( https://github.com/markedjs/marked )
+  -- Christopher Jeffrey
+
+
+* WHATSAPP-API-JS: A LIBRARY FOR WHATSAPP'S OFFICIAL API=20
+( https://github.com/Secreto31126/whatsapp-api-js ) =E2=80=94 For those
+with a Meta Business App with WhatsApp API activated.
+  -- Tom=C3=A1s Raiti
+
+
+* dotenv v17.0 ( https://github.com/motdotla/dotenv ) =E2=80=93 Module to
+load environment variables from .env if you're not using Node's
+built-in mechanism=20
+( https://nodejs.org/dist/latest-v22.x/docs/api/cli.html#--env-fileconfig )
+ to do this yet.
+
+* Electron v37.0.0=20
+( https://www.electronjs.org/blog/electron-37-0 ) =E2=80=93 The
+cross-platform desktop app toolkit.
+
+* npm-package-json-lint 9.0=20
+( https://github.com/tclindner/npm-package-json-lint ) =E2=80=93 A
+package.json linter for Node projects.
+
+* =F0=9F=A4=96 OpenAI v5.8.0 ( https://github.com/openai/openai-node ) =E2=
+=80=93
+Adds support for the OpenAI API's new webhooks=20
+( https://platform.openai.com/docs/guides/webhooks ) and 'deep
+research' features.
+
+* better-sqlite3 v12.2=20
+( https://github.com/WiseLibs/better-sqlite3 ) =E2=80=93 The popular
+powerful SQLite library gets updated to the latest SQLite 3.50.2.
+
+* xero-node 13.0 ( https://github.com/XeroAPI/xero-node ) =E2=80=93 Node
+SDK for the Xero accounting system.
+
+* Mineflayer 4.30 ( https://github.com/PrismarineJS/mineflayer )
+=E2=80=93 Create Minecraft bots in JavaScript.
+
+* Undici 7.11=20
+( https://github.com/nodejs/undici/releases/tag/v7.11.0 ) =E2=80=93 Node's
+powerful HTTP client library.
+
+=F0=9F=93=B0 Classifieds
+
+=F0=9F=90=B1 ConfigCat Feature Flag Service=20
+( https://configcat.com/pricing/?utm_source=3Dcooperpress_newsletter&utm_me=
+dium=3Dsponsor&utm_campaign=3Dcooperpress_node_202506 )
+ lets you run gradual rollouts, A/B tests & target users without
+code changes. Use coupon NODE25 & save 25%!
+
+=F0=9F=8E=A7 The Node (and more) Banter =E2=80=93 a weekly, uncensored dive=
+ into
+Node and scale, where Luca Maraschi and Matteo Collina share war
+stories, anti-patterns, and laughs. Subscribe!=20
+( https://open.spotify.com/show/0cjrbI217FlGr0oopolcON )
+
+------------------
+=F0=9F=93=A2 ELSEWHERE IN JAVASCRIPT
+------------------
+
+A roundup of some other interesting stories in the broader
+JavaScript landscape, in case you've missed them:
+
+* The Deno team takes a look at what's coming to JavaScript=20
+( https://deno.com/blog/updates-from-tc39 ) with some quick
+explainers and sample code covering nine proposals advanced at
+recent TC39 meetings.
+
+* =F0=9F=90=98 PLJS ( https://github.com/plv8/pljs ) is an extension for
+Postgres for writing database functions in JavaScript (powered by
+QuickJS) instead of PL/pgSQL.
+
+* The speaker lineup for JSConf 2025=20
+( https://openjsf.org/blog/jsconf-25-speakers-announced ) has been
+announced. It takes place in Maryland this October.
+
+* If Cloudflare Workers are just too limited for your use case,
+Cloudflare now has a new option: Cloudflare Containers=20
+( https://blog.cloudflare.com/containers-are-available-in-public-beta-for-s=
+imple-global-and-programmable/ )
+. Containers is integrated with Workers but, unsurprisingly,
+lets you package up your app in container images and run them in
+a flexible way.
+
+* Alex Kladov shows how easy it is to create a server-side
+statically generated RSS feed reader=20
+( https://matklad.github.io/2025/06/26/rssssr.html ) =E2=80=93 he uses
+Deno, but you could quite easily use Node here too.
+
+* =F0=9F=95=92 The Temporal API proposal=20
+( https://tc39.es/proposal-temporal/ ) is now a Stage 3 Draft.
+
+Got a link for us? Reply and tell us. We can't include
+everything but we'll look at anything you send. Thanks!
+
+Sponsorship: Email kristina@cooperpress.com for details.
+
+Published by Cooper Press Ltd.
+Fairfield Enterprise
+Centre, Louth, LN11 0LS, United Kingdom
+
+Cancel your subscription=20
+( https://nodeweekly.com/leave/3f65fd1f6e ) or change your address=20
+( https://nodeweekly.com/edit_subscription/3f65fd1f6e ).
+
+------------------
+--a8666fafdf289c58742a2269e7f33431ac32b1839875d9801f37fde6edca
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html>
+<html lang=3D"en">
+  <head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+    <meta charset=3D"utf-8">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width">
+    <meta name=3D"format-detection" content=3D"date=3Dno">
+    <meta name=3D"format-detection" content=3D"telephone=3Dno">
+   =20
+  <style>body {
+margin: 0; padding: 0; width: 100%; background-color: white; -webkit-text-s=
+ize-adjust: 100%; -ms-text-size-adjust: 100%; text-rendering: optimizeLegib=
+ility; direction: ltr;
+}
+body {
+font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; font-si=
+ze: 15px; line-height: 1.48em;
+}
+img {
+border: 0; outline: none; height: auto; text-decoration: none; max-width: 1=
+00%; line-height: 100%;
+}
+@media screen and (max-width: 600px) {
+  table[id=3D"main"] {
+    max-width: 600px !important; width: 100% !important; min-width: 100% !i=
+mportant;
+  }
+  .nomob {
+    display: none !important;
+  }
+  .onlymob {
+    display: inline-block !important;
+  }
+  .rightifmob {
+    text-align: right !important;
+  }
+  .som {
+    max-width: 33% !important;
+  }
+  div.footer p {
+    text-align: left !important;
+  }
+  div.footer td {
+    text-align: left !important;
+  }
+  .el-columns .column {
+    width: 100% !important;
+  }
+}
+</style>
+</head>
+<body style=3D"width: 100%; background-color: white; -webkit-text-size-adju=
+st: 100%; -ms-text-size-adjust: 100%; text-rendering: optimizeLegibility; d=
+irection: ltr; font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans=
+-serif; font-size: 15px; line-height: 1.48em; margin-top: 0; margin-right: =
+0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padd=
+ing-bottom: 0; padding-left: 0;">
+<div id=3D"preview" class=3D"preheader noarchive" style=3D"border-top-width=
+: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width=
+: 0px; color: white; font-family: helvetica, arial; line-height: 0px; heigh=
+t: 0px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; o=
+verflow-y: hidden; padding-top: 0; padding-right: 0; padding-bottom: 0; pad=
+ding-left: 0;">Plus a recap of modern Node.js features and patterns. | </di=
+v>
+<!--[if (gte mso 9)|(IE)]>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" bgcolor=3D"#fff=
+fff" width=3D"600"><tr><td valign=3D"top" style=3D"width: 600px;" bgcolor=
+=3D"#ffffff"><![endif]-->
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" id=
+=3D"main" width=3D"100%" style=3D"table-layout: fixed; font-family: -apple-=
+system,BlinkMacSystemFont,Helvetica,sans-serif; font-size: 15px; line-heigh=
+t: 1.48em; border-collapse: collapse; max-width: 600px; height: 100% !impor=
+tant; direction: ltr; padding-top: 0px; padding-right: 0px; padding-bottom:=
+ 0px; padding-left: 0px;">
+  <tr><td style=3D"font-family: -apple-system,BlinkMacSystemFont,Helvetica,=
+sans-serif; font-size: 15px; line-height: 1.48em; border-collapse: collapse=
+;">
+  <div id=3D"content">    <!-- left/right splitbar -->
+    <table class=3D"el-splitbar" width=3D"100%" cellpadding=3D"0" cellspaci=
+ng=3D"0" style=3D"border-collapse: collapse;"><tr>
+<td width=3D"50%" align=3D"left" style=3D"padding-left: 4px; font-family: -=
+apple-system,BlinkMacSystemFont,Helvetica,sans-serif; font-size: 15px; line=
+-height: 1.48em; border-collapse: collapse;"><p style=3D"font-size: 12px; c=
+olor: #999999; text-transform: uppercase; line-height: 1.0em; margin-top: 0=
+.8em; margin-bottom: 0.8em;">#=E2=80=8B584 =E2=80=94 July 1, 2025</p></td>
+<td width=3D"50%" align=3D"right" style=3D"padding-right: 4px; font-family:=
+ -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; font-size: 15px; li=
+ne-height: 1.48em; border-collapse: collapse;"><p style=3D"font-size: 12px;=
+ text-transform: uppercase; line-height: 1.0em; margin-top: 0.8em; margin-b=
+ottom: 0.8em;"><a href=3D"https://nodeweekly.com/issues/584" style=3D"text-=
+decoration: none; color: #20824B;">Read on the Web</a></p></td>
+</tr></table>
+<table class=3D"norss" id=3D"together" width=3D"100%" align=3D"center" styl=
+e=3D"text-align: center; border-collapse: collapse; margin-top: 0; margin-r=
+ight: 0; margin-bottom: 0; margin-left: 0;">
+  <tr><td style=3D"font-family: -apple-system,BlinkMacSystemFont,Helvetica,=
+sans-serif; font-size: 15px; line-height: 1.48em; border-collapse: collapse=
+; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding=
+-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+    <table align=3D"center" style=3D"margin-top: 4px; margin-bottom: 4px; b=
+order-collapse: collapse;">
+      <tr>
+<td style=3D"vertical-align: middle; text-align: right; text-transform: upp=
+ercase; letter-spacing: -0.2px; font-weight: 500; color: #222; font-size: 0=
+.9em; font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; l=
+ine-height: 1.48em; border-collapse: collapse;">Together with=C2=A0</td>
+        <td style=3D"vertical-align: middle; text-align: left; font-family:=
+ -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; font-size: 15px; li=
+ne-height: 1.48em; border-collapse: collapse;">
+          <a href=3D"https://nodeweekly.com/link/171104/3f65fd1f6e" style=
+=3D"outline: none; text-decoration: none; color: #20824B; border-top-width:=
+ 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;">
+          <img src=3D"https://res.cloudinary.com/cpress/image/upload/c_fill=
+,g_auto,e_trim,w_1238,h_192/e_make_transparent/co_white,e_outline:37/fcshbu=
+9d17nd8smej96j.png" style=3D"max-width: 160px; outline: none; height: auto;=
+ text-decoration: none; line-height: 100%; border-top-width: 0; border-righ=
+t-width: 0; border-bottom-width: 0; border-left-width: 0;" width=3D"160" al=
+t=3D"Code Rabbit">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </td></tr>
+</table>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-c=
+ollapse: collapse;"><tr><td style=3D"height: 8px; font-family: -apple-syste=
+m,BlinkMacSystemFont,Helvetica,sans-serif; font-size: 15px; line-height: 1.=
+48em; border-collapse: collapse;"></td></tr></table>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" bgcolor=3D"#6ca62=
+9" border=3D"0" style=3D"border-collapse: collapse;"><tr style=3D"max-heigh=
+t: 90px;" width=3D"100%"><td style=3D"width: 100%; font-family: -apple-syst=
+em,BlinkMacSystemFont,Helvetica,sans-serif; font-size: 15px; line-height: 1=
+.48em; border-collapse: collapse; margin-top: 0; margin-right: 0; margin-bo=
+ttom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: =
+0; padding-left: 0;"><img src=3D"https://res.cloudinary.com/cpress/image/up=
+load/v1653576619/lgfqinzbdqttwmhvljxb.png" alt=3D"Node.js Weekly" width=3D"=
+100%" style=3D"max-width: 100%; outline: none; height: auto; text-decoratio=
+n: none; line-height: 100%; border-top-width: 0; border-right-width: 0; bor=
+der-bottom-width: 0; border-left-width: 0;"></td></tr></table>
+<table width=3D"100%" class=3D"el-fullwidthimage " cellpadding=3D"0" cellsp=
+acing=3D"0" style=3D"border-collapse: collapse;"><tr><td style=3D"font-fami=
+ly: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; font-size: 15px;=
+ line-height: 1.48em; border-collapse: collapse;">
+  <a href=3D"https://nodeweekly.com/link/171105/3f65fd1f6e" style=3D"text-d=
+ecoration: none; color: #20824B;"><img src=3D"https://res.cloudinary.com/cp=
+ress/image/upload/w_1280,e_sharpen:60,q_auto/gkovmujk3n62qzny2jjo.jpg" alt=
+=3D"" width=3D"640" style=3D"outline: none; height: auto; text-decoration: =
+none; max-width: 100%; line-height: 100%; width: 100%; border-bottom-color:=
+ #6ca629; border-bottom-style: solid; border-top-width: 0; border-right-wid=
+th: 0; border-bottom-width: 3px; border-left-width: 0;"></a>
+</td></tr></table>
+
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"el-item =
+item  " style=3D"border-collapse: collapse; margin-bottom: 4px;"><tr><td st=
+yle=3D"font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; =
+font-size: 15px; line-height: 1.48em; border-collapse: collapse; padding-to=
+p: 0px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px;">
+ =20
+  <p class=3D"desc" style=3D"color: #222; margin-top: 0.8em; margin-bottom:=
+ 0; line-height: 1.6em !important; font-size: 15px !important;"><span style=
+=3D"font-weight: 500 !important; font-size: 18px !important; color: #000;" =
+class=3D"mainlink"><a href=3D"https://nodeweekly.com/link/171105/3f65fd1f6e=
+" title=3D"kashw1n.com" style=3D"text-decoration: none; color: #20824B; bor=
+der-bottom-width: 1px !important; border-bottom-color: #ddd !important; bor=
+der-bottom-style: solid !important;">Modern Node.js Patterns for 2025</a></=
+span> =E2=80=94 We=E2=80=99ve reached the half way point for the year, so w=
+hy not take a moment to reflect on the potential of Node as it stands right=
+ now? Ashwin reminds us of various aspects including the use of ES modules,=
+ built-in Web APIs, the test runner, watch mode, the permission model, impo=
+rt maps, and=C2=A0more.</p>
+  <p class=3D"name" style=3D"color: #aaa !important; margin-top: 4px; margi=
+n-bottom: 0.8em; text-transform: uppercase; font-size: 12px; line-height: 1=
+.2em;">Ashwin </p>
+</td></tr></table>
+
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"el-item =
+item  " style=3D"border-collapse: collapse; margin-bottom: 4px;"><tr><td st=
+yle=3D"font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; =
+font-size: 15px; line-height: 1.48em; border-collapse: collapse; padding-to=
+p: 0px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px;">
+ =20
+  <p class=3D"desc" style=3D"color: #222; margin-top: 0.8em; margin-bottom:=
+ 0; line-height: 1.6em !important; font-size: 15px !important;"><span style=
+=3D"font-weight: 500 !important; font-size: 18px !important; color: #000;" =
+class=3D"mainlink"><a href=3D"https://nodeweekly.com/link/171106/3f65fd1f6e=
+" title=3D"nodejs.org" style=3D"text-decoration: none; color: #20824B; bord=
+er-bottom-width: 1px !important; border-bottom-color: #ddd !important; bord=
+er-bottom-style: solid !important;">Node v22.17.0 (LTS) Released</a></span>=
+ =E2=80=94 A notable LTS release as <code style=3D"background-color: #f4ffd=
+d !important;">assert.partialDeepStrictEqual()</code> gets promoted to stab=
+le along with numerous long-time experimental APIs/functions, and a few Nod=
+e 24 features get=C2=A0backported.</p>
+  <p class=3D"name" style=3D"color: #aaa !important; margin-top: 4px; margi=
+n-bottom: 0.8em; text-transform: uppercase; font-size: 12px; line-height: 1=
+.2em;">Antoine du Hamel </p>
+</td></tr></table>
+<!-- normal content section -->
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"content =
+el-content blue" style=3D"color: #222; border-collapse: collapse;"><tr><td =
+style=3D"font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif=
+; font-size: 15px; line-height: 1.48em; border-collapse: collapse; padding-=
+top: 0px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px;"><p=
+ style=3D"margin-top: 0; margin-bottom: 0.8em; background-color: #f0f9ff; l=
+ine-height: 1.4em; font-size: 0.9em; padding-top: 8px; padding-right: 8px; =
+padding-bottom: 8px; padding-left: 8px;">=F0=9F=92=A1 <a href=3D"https://no=
+deweekly.com/link/171107/3f65fd1f6e" style=3D"text-decoration: none; color:=
+ #20824B; font-weight: 600;">Node v24.3.0 (Current)</a> has been released, =
+with no significant new=C2=A0features.</p></td></tr></table>
+
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"el-item =
+item  " style=3D"border-collapse: collapse; margin-bottom: 4px;"><tr><td st=
+yle=3D"font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; =
+font-size: 15px; line-height: 1.48em; border-collapse: collapse; padding-to=
+p: 0px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px;">
+  <a target=3D"_blank" href=3D"https://nodeweekly.com/link/171104/3f65fd1f6=
+e" style=3D"text-decoration: none; color: #20824B; border-bottom-width: 1px=
+ !important; border-bottom-color: #ddd !important; border-bottom-style: sol=
+id !important;"><img src=3D"https://res.cloudinary.com/cpress/image/upload/=
+c_limit,w_480,h_480,q_auto/copm/6e3b2159.png" width=3D"126" height=3D"110" =
+style=3D"padding-top: 12px; padding-left: 12px; outline: none; height: auto=
+; text-decoration: none; max-width: 100%; line-height: 100%; border-top-wid=
+th: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;=
+" align=3D"right" alt=3D"" class=3D"som"></a>
+  <p class=3D"desc" style=3D"color: #222; margin-top: 0.8em; margin-bottom:=
+ 0; line-height: 1.6em !important; font-size: 15px !important;"><span style=
+=3D"font-weight: 500 !important; font-size: 18px !important; color: #000;" =
+class=3D"mainlink"><a href=3D"https://nodeweekly.com/link/171104/3f65fd1f6e=
+" title=3D"coderabbit.link" style=3D"text-decoration: none; color: #20824B;=
+ border-bottom-width: 1px !important; border-bottom-color: #ddd !important;=
+ border-bottom-style: solid !important;">CodeRabbit=E2=80=99s Free AI Code =
+Reviews in IDE - VS Code, Cursor, Windsurf</a></span> =E2=80=94 Code Rabbit=
+ brings AI code reviews to VS Code, Cursor &amp; Windsurf. Get line-by-line=
+ reviews, one-click fixes &amp; codebase-aware feedback - all free in your =
+IDE. Seamlessly integrates with git workflows. <a href=3D"https://nodeweekl=
+y.com/link/171104/3f65fd1f6e" style=3D"text-decoration: none; color: #20824=
+B; border-bottom-width: 1px !important; border-bottom-color: #ddd !importan=
+t; border-bottom-style: solid !important;">Install the extension &amp; star=
+t=C2=A0reviewing!</a></p>
+  <p class=3D"name" style=3D"color: #aaa !important; margin-top: 4px; margi=
+n-bottom: 0.8em; text-transform: uppercase; font-size: 12px; line-height: 1=
+.2em;">CodeRabbit <span style=3D"text-transform: uppercase; margin-left: 4p=
+x; font-size: 0.9em; border-radius: 2px; background-color: #ff8; color: #99=
+7 !important; padding-top: 1px; padding-right: 4px; padding-bottom: 1px; pa=
+dding-left: 4px; border-top-width: 1px; border-right-width: 1px; border-bot=
+tom-width: 1px; border-left-width: 1px; border-top-color: #eeb; border-righ=
+t-color: #eeb; border-bottom-color: #eeb; border-left-color: #eeb; border-t=
+op-style: solid; border-right-style: solid; border-bottom-style: solid; bor=
+der-left-style: solid;" class=3D"tag-sponsor">sponsor</span></p>
+</td></tr></table>
+
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"el-item =
+item  " style=3D"border-collapse: collapse; margin-bottom: 4px;"><tr><td st=
+yle=3D"font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; =
+font-size: 15px; line-height: 1.48em; border-collapse: collapse; padding-to=
+p: 0px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px;">
+ =20
+  <p class=3D"desc" style=3D"color: #222; margin-top: 0.8em; margin-bottom:=
+ 0; line-height: 1.6em !important; font-size: 15px !important;"><span style=
+=3D"font-weight: 500 !important; font-size: 18px !important; color: #000;" =
+class=3D"mainlink"><a href=3D"https://nodeweekly.com/link/171108/3f65fd1f6e=
+" title=3D"2ality.com" style=3D"text-decoration: none; color: #20824B; bord=
+er-bottom-width: 1px !important; border-bottom-color: #ddd !important; bord=
+er-bottom-style: solid !important;">Ecma International Approves ECMAScript =
+2025: What=E2=80=99s New?</a></span> =E2=80=94 The Ecma General Assembly ha=
+s approved the ES2025 language specification, which you can <a href=3D"http=
+s://nodeweekly.com/link/171109/3f65fd1f6e" style=3D"text-decoration: none; =
+color: #20824B; border-bottom-width: 1px !important; border-bottom-color: #=
+ddd !important; border-bottom-style: solid !important;">read in full here</=
+a>, or you can enjoy Dr. Axel=E2=80=99s more succinct explainer=C2=A0instea=
+d.</p>
+  <p class=3D"name" style=3D"color: #aaa !important; margin-top: 4px; margi=
+n-bottom: 0.8em; text-transform: uppercase; font-size: 12px; line-height: 1=
+.2em;">Dr. Axel Rauschmayer </p>
+</td></tr></table>
+
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"el-item =
+item  " style=3D"border-collapse: collapse; margin-bottom: 4px;"><tr><td st=
+yle=3D"font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; =
+font-size: 15px; line-height: 1.48em; border-collapse: collapse; padding-to=
+p: 0px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px;">
+ =20
+  <p class=3D"desc" style=3D"color: #222; margin-top: 0.8em; margin-bottom:=
+ 0; line-height: 1.6em !important; font-size: 15px !important;"><span style=
+=3D"font-weight: 500 !important; font-size: 18px !important; color: #000;" =
+class=3D"mainlink"><a href=3D"https://nodeweekly.com/link/171110/3f65fd1f6e=
+" title=3D"aws.amazon.com" style=3D"text-decoration: none; color: #20824B; =
+border-bottom-width: 1px !important; border-bottom-color: #ddd !important; =
+border-bottom-style: solid !important;">Secure Your Express APIs in 5 Minut=
+es with Cedar</a></span> =E2=80=94 <a href=3D"https://nodeweekly.com/link/1=
+71111/3f65fd1f6e" style=3D"text-decoration: none; color: #20824B; border-bo=
+ttom-width: 1px !important; border-bottom-color: #ddd !important; border-bo=
+ttom-style: solid !important;">Cedar</a> is a language and spec for definin=
+g permissions and evaluating them. Its new <a href=3D"https://nodeweekly.co=
+m/link/171112/3f65fd1f6e" style=3D"text-decoration: none; color: #20824B; b=
+order-bottom-width: 1px !important; border-bottom-color: #ddd !important; b=
+order-bottom-style: solid !important;">authorization-for-expressjs</a> enab=
+les Cedar-based authorization for Express.js=C2=A0apps.</p>
+  <p class=3D"name" style=3D"color: #aaa !important; margin-top: 4px; margi=
+n-bottom: 0.8em; text-transform: uppercase; font-size: 12px; line-height: 1=
+.2em;">Trevor Schiavone (AWS) </p>
+</td></tr></table>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"content =
+el-md " style=3D"border-collapse: collapse;"><tr><td style=3D"font-family: =
+-apple-system,BlinkMacSystemFont,Helvetica,sans-serif; font-size: 15px; lin=
+e-height: 1.48em; border-collapse: collapse; padding-top: 0px; padding-righ=
+t: 15px; padding-bottom: 0px; padding-left: 15px;">
+<p style=3D"margin-top: 0.6em; margin-bottom: 0.8em;"><strong style=3D"font=
+-weight: 600;">IN BRIEF:</strong></p>
+<ul>
+<li style=3D"color: #222; line-height: 1.35em; margin-bottom: 12px; margin-=
+left: 0px !important;">
+<p style=3D"margin-top: 0.6em; margin-bottom: 0.8em;">=F0=9F=A6=8B The Node=
+.js project has <a href=3D"https://nodeweekly.com/link/171113/3f65fd1f6e" s=
+tyle=3D"text-decoration: none; color: #20824B; font-weight: 500 !important;=
+ border-bottom-width: 1px; border-bottom-color: #ddd; border-bottom-style: =
+solid;">an official Bluesky account</a> where updates are shared, but the t=
+eam <a href=3D"https://nodeweekly.com/link/171114/3f65fd1f6e" style=3D"text=
+-decoration: none; color: #20824B; font-weight: 500 !important; border-bott=
+om-width: 1px; border-bottom-color: #ddd; border-bottom-style: solid;">want=
+s your input into what sort of content they should post.</a></p>
+</li>
+<li style=3D"color: #222; line-height: 1.35em; margin-bottom: 12px; margin-=
+left: 0px !important;">
+<p style=3D"margin-top: 0.6em; margin-bottom: 0.8em;">Ryan Dahl checks in w=
+ith <a href=3D"https://nodeweekly.com/link/171115/3f65fd1f6e" style=3D"text=
+-decoration: none; color: #20824B; font-weight: 500 !important; border-bott=
+om-width: 1px; border-bottom-color: #ddd; border-bottom-style: solid;">a qu=
+ick update on the ongoing JavaScript=E2=84=A2 trademark dispute</a>. Oracle=
+ has about a month to respond in full to Deno's cancellation=C2=A0petition.=
+</p>
+</li>
+<li style=3D"color: #222; line-height: 1.35em; margin-bottom: 12px; margin-=
+left: 0px !important;">
+<p style=3D"margin-top: 0.6em; margin-bottom: 0.8em;">The official Node blo=
+g is celebrating June's Pride Month with <a href=3D"https://nodeweekly.com/=
+link/171116/3f65fd1f6e" style=3D"text-decoration: none; color: #20824B; fon=
+t-weight: 500 !important; border-bottom-width: 1px; border-bottom-color: #d=
+dd; border-bottom-style: solid;">a look at the concept of identity</a> and =
+<a href=3D"https://nodeweekly.com/link/171117/3f65fd1f6e" style=3D"text-dec=
+oration: none; color: #20824B; font-weight: 500 !important; border-bottom-w=
+idth: 1px; border-bottom-color: #ddd; border-bottom-style: solid;">a profil=
+e of Emilia Smith</a> who made some early, notable contributions to=C2=A0No=
+de.js.</p>
+</li>
+</ul>
+</td></tr></table>
+
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"el-item =
+item  " style=3D"border-collapse: collapse; margin-bottom: 4px;"><tr><td st=
+yle=3D"font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; =
+font-size: 15px; line-height: 1.48em; border-collapse: collapse; padding-to=
+p: 0px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px;">
+ =20
+  <p class=3D"desc" style=3D"color: #222; margin-top: 0.8em; margin-bottom:=
+ 0; line-height: 1.6em !important; font-size: 15px !important;"><span style=
+=3D"font-weight: 500 !important; font-size: 18px !important; color: #000;" =
+class=3D"mainlink"><span class=3D"pretitle">V8:</span>=C2=A0<a href=3D"http=
+s://nodeweekly.com/link/171118/3f65fd1f6e" title=3D"v8.dev" style=3D"text-d=
+ecoration: none; color: #20824B; border-bottom-width: 1px !important; borde=
+r-bottom-color: #ddd !important; border-bottom-style: solid !important;">Sp=
+eculative Optimizations for WebAssembly using Deopts and=C2=A0Inlining</a><=
+/span> =E2=80=94 A <strong style=3D"font-weight: 600;">very</strong> techni=
+cal post from the V8 team about two significant new optimizations in the V8=
+ engine that make WebAssembly code run much=C2=A0faster.</p>
+  <p class=3D"name" style=3D"color: #aaa !important; margin-top: 4px; margi=
+n-bottom: 0.8em; text-transform: uppercase; font-size: 12px; line-height: 1=
+.2em;">Daniel Lehmann and Matthias Liedtke (V8) </p>
+</td></tr></table>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"content =
+el-md " style=3D"border-collapse: collapse;"><tr><td style=3D"font-family: =
+-apple-system,BlinkMacSystemFont,Helvetica,sans-serif; font-size: 15px; lin=
+e-height: 1.48em; border-collapse: collapse; padding-top: 0px; padding-righ=
+t: 15px; padding-bottom: 0px; padding-left: 15px;">
+<p style=3D"margin-top: 0.6em; margin-bottom: 0.8em;">=F0=9F=93=84 <a href=
+=3D"https://nodeweekly.com/link/171119/3f65fd1f6e" style=3D"text-decoration=
+: none; color: #20824B; font-weight: 500 !important;">How to Use NestJS as =
+a Signaling Server for WebRTC Video Chat</a>  <cite style=3D"color: #444; t=
+ext-transform: uppercase; font-size: 0.8em; font-style: normal; white-space=
+: nowrap; line-height: 1.4em;">Christian Nwamba</cite></p>
+<p style=3D"margin-top: 0.8em; margin-bottom: 0.8em;">=F0=9F=93=84 <a href=
+=3D"https://nodeweekly.com/link/171120/3f65fd1f6e" style=3D"text-decoration=
+: none; color: #20824B; font-weight: 500 !important;">How to Write Compelli=
+ng Software Release Announcements</a>  <cite style=3D"color: #444; text-tra=
+nsform: uppercase; font-size: 0.8em; font-style: normal; white-space: nowra=
+p; line-height: 1.4em;">Michael Lynch</cite></p>
+<p style=3D"margin-top: 0.8em; margin-bottom: 0.8em;">=F0=9F=93=BA <a href=
+=3D"https://nodeweekly.com/link/171121/3f65fd1f6e" style=3D"text-decoration=
+: none; color: #20824B; font-weight: 500 !important;">Using Claude Code to =
+Build a GitHub Actions Workflow</a> =E2=80=93 Simon takes a Python-oriented=
+ approach but you could just as easily tell Claude to use JavaScript or eve=
+n shell scripting=C2=A0here. <cite style=3D"color: #444; text-transform: up=
+percase; font-size: 0.8em; font-style: normal; white-space: nowrap; line-he=
+ight: 1.4em;">Simon Willison</cite></p>
+<p style=3D"margin-top: 0.8em; margin-bottom: 0.8em;">=F0=9F=92=AC <a href=
+=3D"https://nodeweekly.com/link/171122/3f65fd1f6e" style=3D"text-decoration=
+: none; color: #20824B; font-weight: 500 !important;">Why Does My Node Mult=
+iplayer Game Lag at 500 Players with Low CPU?</a> =E2=80=93 A public discus=
+sion. <cite style=3D"color: #444; text-transform: uppercase; font-size: 0.8=
+em; font-style: normal; white-space: nowrap; line-height: 1.4em;">Hacker Ne=
+ws</cite></p>
+</td></tr></table>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-c=
+ollapse: collapse;"><tr><td style=3D"height: 8px; font-family: -apple-syste=
+m,BlinkMacSystemFont,Helvetica,sans-serif; font-size: 15px; line-height: 1.=
+48em; border-collapse: collapse;"></td></tr></table>
+<!-- normal content section -->
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"content =
+el-content " style=3D"color: #222; border-collapse: collapse;"><tr><td styl=
+e=3D"font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; fo=
+nt-size: 15px; line-height: 1.48em; border-collapse: collapse; padding-top:=
+ 0px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px;"><p sty=
+le=3D"color: #46483d; font-size: 1.4em; margin-top: 14px; font-weight: 600;=
+ border-bottom-width: 4px; border-bottom-color: #eeeeee; border-bottom-styl=
+e: solid; line-height: 1.4em; display: inline-block; margin-bottom: 10px;">=
+=F0=9F=9B=A0=C2=A0Code &amp; Tools</p></td></tr></table>
+<table width=3D"100%" class=3D"el-fullwidthimage " cellpadding=3D"0" cellsp=
+acing=3D"0" style=3D"border-collapse: collapse;"><tr><td style=3D"font-fami=
+ly: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; font-size: 15px;=
+ line-height: 1.48em; border-collapse: collapse;">
+  <a href=3D"https://nodeweekly.com/link/171123/3f65fd1f6e" style=3D"text-d=
+ecoration: none; color: #20824B;"><img src=3D"https://res.cloudinary.com/cp=
+ress/image/upload/w_1280,e_sharpen:60,q_auto/fnkdemds4eyfo7q5d7c9.jpg" alt=
+=3D"" width=3D"640" style=3D"border-top-color: #dddddd; border-top-style: s=
+olid; border-bottom-color: #dddddd; border-bottom-style: solid; outline: no=
+ne; height: auto; text-decoration: none; max-width: 100%; line-height: 100%=
+; width: 100%; border-top-width: 3px; border-right-width: 0; border-bottom-=
+width: 3px; border-left-width: 0;"></a>
+</td></tr></table>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-c=
+ollapse: collapse;"><tr><td style=3D"height: 2px; font-family: -apple-syste=
+m,BlinkMacSystemFont,Helvetica,sans-serif; font-size: 15px; line-height: 1.=
+48em; border-collapse: collapse;"></td></tr></table>
+
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"el-item =
+item  " style=3D"border-collapse: collapse; margin-bottom: 4px;"><tr><td st=
+yle=3D"font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; =
+font-size: 15px; line-height: 1.48em; border-collapse: collapse; padding-to=
+p: 0px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px;">
+ =20
+  <p class=3D"desc" style=3D"color: #222; margin-top: 0.8em; margin-bottom:=
+ 0; line-height: 1.6em !important; font-size: 15px !important;"><span style=
+=3D"font-weight: 500 !important; font-size: 18px !important; color: #000;" =
+class=3D"mainlink"><a href=3D"https://nodeweekly.com/link/171123/3f65fd1f6e=
+" title=3D"github.com" style=3D"text-decoration: none; color: #20824B; bord=
+er-bottom-width: 1px !important; border-bottom-color: #ddd !important; bord=
+er-bottom-style: solid !important;">Transformers.js 3.6: Now You Can Run Ge=
+mma 3n from Node</a></span> =E2=80=94 <em>Transformers.js</em> brings the p=
+ower of Hugging Face=E2=80=99s popular Python <em>Transformers</em> library=
+ into the world of JavaScript, enabling the use of various machine learning=
+ models for NLP, vision, audio processing, and more. The big feature in v3.=
+6 is support for Google=E2=80=99s new <a href=3D"https://nodeweekly.com/lin=
+k/171124/3f65fd1f6e" style=3D"text-decoration: none; color: #20824B; border=
+-bottom-width: 1px !important; border-bottom-color: #ddd !important; border=
+-bottom-style: solid !important;">Gemma 3n=C2=A0model.</a></p>
+  <p class=3D"name" style=3D"color: #aaa !important; margin-top: 4px; margi=
+n-bottom: 0.8em; text-transform: uppercase; font-size: 12px; line-height: 1=
+.2em;">Hugging Face </p>
+</td></tr></table>
+<!-- normal content section -->
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"content =
+el-content blue" style=3D"color: #222; border-collapse: collapse;"><tr><td =
+style=3D"font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif=
+; font-size: 15px; line-height: 1.48em; border-collapse: collapse; padding-=
+top: 0px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px;"><p=
+ style=3D"margin-top: 0; margin-bottom: 0.8em; background-color: #f0f9ff; l=
+ine-height: 1.4em; font-size: 0.9em; padding-top: 8px; padding-right: 8px; =
+padding-bottom: 8px; padding-left: 8px;">=F0=9F=92=A1 In mildly related new=
+s, Meridius Labs has been building <a href=3D"https://nodeweekly.com/link/1=
+71125/3f65fd1f6e" style=3D"text-decoration: none; color: #20824B; font-weig=
+ht: 600;">an unofficial library for working with the new Apple Foundation m=
+odels</a> on macOS=C2=A0Tahoe.</p></td></tr></table>
+
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"el-item =
+item  " style=3D"border-collapse: collapse; margin-bottom: 4px;"><tr><td st=
+yle=3D"font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; =
+font-size: 15px; line-height: 1.48em; border-collapse: collapse; padding-to=
+p: 0px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px;">
+ =20
+  <p class=3D"desc" style=3D"color: #222; margin-top: 0.8em; margin-bottom:=
+ 0; line-height: 1.6em !important; font-size: 15px !important;"><span style=
+=3D"font-weight: 500 !important; font-size: 18px !important; color: #000;" =
+class=3D"mainlink"><a href=3D"https://nodeweekly.com/link/171126/3f65fd1f6e=
+" title=3D"www.browserstack.com" style=3D"text-decoration: none; color: #20=
+824B; border-bottom-width: 1px !important; border-bottom-color: #ddd !impor=
+tant; border-bottom-style: solid !important;">Real-Device Testing for iOS S=
+afari, Now Playwright-Friendly</a></span> =E2=80=94 Curious how your web ap=
+p behaves on iOS Safari? You can now run Playwright tests on real iOS devic=
+es via=C2=A0BrowserStack.</p>
+  <p class=3D"name" style=3D"color: #aaa !important; margin-top: 4px; margi=
+n-bottom: 0.8em; text-transform: uppercase; font-size: 12px; line-height: 1=
+.2em;">BrowserStack <span style=3D"text-transform: uppercase; margin-left: =
+4px; font-size: 0.9em; border-radius: 2px; background-color: #ff8; color: #=
+997 !important; padding-top: 1px; padding-right: 4px; padding-bottom: 1px; =
+padding-left: 4px; border-top-width: 1px; border-right-width: 1px; border-b=
+ottom-width: 1px; border-left-width: 1px; border-top-color: #eeb; border-ri=
+ght-color: #eeb; border-bottom-color: #eeb; border-left-color: #eeb; border=
+-top-style: solid; border-right-style: solid; border-bottom-style: solid; b=
+order-left-style: solid;" class=3D"tag-sponsor">sponsor</span></p>
+</td></tr></table>
+
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"el-item =
+item  " style=3D"border-collapse: collapse; margin-bottom: 4px;"><tr><td st=
+yle=3D"font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; =
+font-size: 15px; line-height: 1.48em; border-collapse: collapse; padding-to=
+p: 0px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px;">
+ =20
+  <p class=3D"desc" style=3D"color: #222; margin-top: 0.8em; margin-bottom:=
+ 0; line-height: 1.6em !important; font-size: 15px !important;"><span style=
+=3D"font-weight: 500 !important; font-size: 18px !important; color: #000;" =
+class=3D"mainlink"><a href=3D"https://nodeweekly.com/link/171127/3f65fd1f6e=
+" title=3D"repomix.com" style=3D"text-decoration: none; color: #20824B; bor=
+der-bottom-width: 1px !important; border-bottom-color: #ddd !important; bor=
+der-bottom-style: solid !important;">Repomix 1.0: Pack Your Codebase Into A=
+I-Friendly Formats</a></span> =E2=80=94 Enter a GitHub URL and choose vario=
+us settings for the output (XML, MD, etc). It=E2=80=99s Node.js-based and a=
+vailable to use in a library-like form for your own tooling creations too. =
+<a href=3D"https://nodeweekly.com/link/171128/3f65fd1f6e" style=3D"text-dec=
+oration: none; color: #20824B; border-bottom-width: 1px !important; border-=
+bottom-color: #ddd !important; border-bottom-style: solid !important;">v1.0=
+</a> is essentially a <em>=E2=80=98this is stable and complete now=E2=80=99=
+</em> release. <a href=3D"https://nodeweekly.com/link/171129/3f65fd1f6e" st=
+yle=3D"text-decoration: none; color: #20824B; border-bottom-width: 1px !imp=
+ortant; border-bottom-color: #ddd !important; border-bottom-style: solid !i=
+mportant;">GitHub=C2=A0repo.</a></p>
+  <p class=3D"name" style=3D"color: #aaa !important; margin-top: 4px; margi=
+n-bottom: 0.8em; text-transform: uppercase; font-size: 12px; line-height: 1=
+.2em;">Kazuki Yamada </p>
+</td></tr></table>
+
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"el-item =
+item  " style=3D"border-collapse: collapse; margin-bottom: 4px;"><tr><td st=
+yle=3D"font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; =
+font-size: 15px; line-height: 1.48em; border-collapse: collapse; padding-to=
+p: 0px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px;">
+ =20
+  <p class=3D"desc" style=3D"color: #222; margin-top: 0.8em; margin-bottom:=
+ 0; line-height: 1.6em !important; font-size: 15px !important;"><span style=
+=3D"font-weight: 500 !important; font-size: 18px !important; color: #000;" =
+class=3D"mainlink"><a href=3D"https://nodeweekly.com/link/171130/3f65fd1f6e=
+" title=3D"marked.js.org" style=3D"text-decoration: none; color: #20824B; b=
+order-bottom-width: 1px !important; border-bottom-color: #ddd !important; b=
+order-bottom-style: solid !important;">Marked 16.0: A Fast Markdown Parser =
+and Compiler</a></span> =E2=80=94 <a href=3D"https://nodeweekly.com/link/17=
+1131/3f65fd1f6e" style=3D"text-decoration: none; color: #20824B; border-bot=
+tom-width: 1px !important; border-bottom-color: #ddd !important; border-bot=
+tom-style: solid !important;">Demo here</a> to see it in action. <a href=3D=
+"https://nodeweekly.com/link/171132/3f65fd1f6e" style=3D"text-decoration: n=
+one; color: #20824B; border-bottom-width: 1px !important; border-bottom-col=
+or: #ddd !important; border-bottom-style: solid !important;">GitHub=C2=A0re=
+po.</a></p>
+  <p class=3D"name" style=3D"color: #aaa !important; margin-top: 4px; margi=
+n-bottom: 0.8em; text-transform: uppercase; font-size: 12px; line-height: 1=
+.2em;">Christopher Jeffrey </p>
+</td></tr></table>
+
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"el-item =
+item  " style=3D"border-collapse: collapse; margin-bottom: 4px;"><tr><td st=
+yle=3D"font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; =
+font-size: 15px; line-height: 1.48em; border-collapse: collapse; padding-to=
+p: 0px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px;">
+ =20
+  <p class=3D"desc" style=3D"color: #222; margin-top: 0.8em; margin-bottom:=
+ 0; line-height: 1.6em !important; font-size: 15px !important;"><span style=
+=3D"font-weight: 500 !important; font-size: 18px !important; color: #000;" =
+class=3D"mainlink"><a href=3D"https://nodeweekly.com/link/171133/3f65fd1f6e=
+" title=3D"github.com" style=3D"text-decoration: none; color: #20824B; bord=
+er-bottom-width: 1px !important; border-bottom-color: #ddd !important; bord=
+er-bottom-style: solid !important;">whatsapp-api-js: A Library for Whatsapp=
+'s Official API</a></span> =E2=80=94 For those with a Meta Business App wit=
+h WhatsApp API=C2=A0activated.</p>
+  <p class=3D"name" style=3D"color: #aaa !important; margin-top: 4px; margi=
+n-bottom: 0.8em; text-transform: uppercase; font-size: 12px; line-height: 1=
+.2em;">Tom=C3=A1s Raiti </p>
+</td></tr></table>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"content =
+el-md releases flat" style=3D"border-collapse: collapse;"><tr><td style=3D"=
+font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; font-si=
+ze: 15px; line-height: 1.48em; border-collapse: collapse; padding-top: 0px;=
+ padding-right: 15px; padding-bottom: 0px; padding-left: 15px;">
+<ul style=3D"padding-left: 0; margin-left: 0px; list-style-type: none; list=
+-style-position: inside;">
+<li style=3D"color: #222; line-height: 1.35em; margin-bottom: 12px; margin-=
+left: 0px !important;">
+<p style=3D"margin-top: 0.6em; margin-bottom: 0.8em;"><a href=3D"https://no=
+deweekly.com/link/171134/3f65fd1f6e" style=3D"text-decoration: none; color:=
+ #20824B; font-weight: 500 !important; border-bottom-width: 1px; border-bot=
+tom-color: #ddd; border-bottom-style: solid;">dotenv v17.0</a> =E2=80=93 Mo=
+dule to load environment variables from <code>.env</code> if you're not usi=
+ng <a href=3D"https://nodeweekly.com/link/171135/3f65fd1f6e" style=3D"text-=
+decoration: none; color: #20824B; font-weight: 500 !important; border-botto=
+m-width: 1px; border-bottom-color: #ddd; border-bottom-style: solid;">Node'=
+s built-in mechanism</a> to do this=C2=A0yet.</p>
+</li>
+<li style=3D"color: #222; line-height: 1.35em; margin-bottom: 12px; margin-=
+left: 0px !important;">
+<p style=3D"margin-top: 0.6em; margin-bottom: 0.8em;"><a href=3D"https://no=
+deweekly.com/link/171136/3f65fd1f6e" style=3D"text-decoration: none; color:=
+ #20824B; font-weight: 500 !important; border-bottom-width: 1px; border-bot=
+tom-color: #ddd; border-bottom-style: solid;">Electron v37.0.0</a> =E2=80=
+=93 The cross-platform desktop app=C2=A0toolkit.</p>
+</li>
+<li style=3D"color: #222; line-height: 1.35em; margin-bottom: 12px; margin-=
+left: 0px !important;">
+<p style=3D"margin-top: 0.6em; margin-bottom: 0.8em;"><a href=3D"https://no=
+deweekly.com/link/171137/3f65fd1f6e" style=3D"text-decoration: none; color:=
+ #20824B; font-weight: 500 !important; border-bottom-width: 1px; border-bot=
+tom-color: #ddd; border-bottom-style: solid;">npm-package-json-lint 9.0</a>=
+ =E2=80=93 A <code>package.json</code> linter for Node=C2=A0projects.</p>
+</li>
+<li style=3D"color: #222; line-height: 1.35em; margin-bottom: 12px; margin-=
+left: 0px !important;">
+<p style=3D"margin-top: 0.6em; margin-bottom: 0.8em;">=F0=9F=A4=96 <a href=
+=3D"https://nodeweekly.com/link/171138/3f65fd1f6e" style=3D"text-decoration=
+: none; color: #20824B; font-weight: 500 !important; border-bottom-width: 1=
+px; border-bottom-color: #ddd; border-bottom-style: solid;">OpenAI v5.8.0</=
+a> =E2=80=93 Adds support for the OpenAI API's new <a href=3D"https://nodew=
+eekly.com/link/171139/3f65fd1f6e" style=3D"text-decoration: none; color: #2=
+0824B; font-weight: 500 !important; border-bottom-width: 1px; border-bottom=
+-color: #ddd; border-bottom-style: solid;">webhooks</a> and 'deep research'=
+=C2=A0features.</p>
+</li>
+<li style=3D"color: #222; line-height: 1.35em; margin-bottom: 12px; margin-=
+left: 0px !important;">
+<p style=3D"margin-top: 0.6em; margin-bottom: 0.8em;"><a href=3D"https://no=
+deweekly.com/link/171140/3f65fd1f6e" style=3D"text-decoration: none; color:=
+ #20824B; font-weight: 500 !important; border-bottom-width: 1px; border-bot=
+tom-color: #ddd; border-bottom-style: solid;">better-sqlite3 v12.2</a> =E2=
+=80=93 The popular powerful SQLite library gets updated to the latest SQLit=
+e=C2=A03.50.2.</p>
+</li>
+<li style=3D"color: #222; line-height: 1.35em; margin-bottom: 12px; margin-=
+left: 0px !important;">
+<p style=3D"margin-top: 0.6em; margin-bottom: 0.8em;"><a href=3D"https://no=
+deweekly.com/link/171141/3f65fd1f6e" style=3D"text-decoration: none; color:=
+ #20824B; font-weight: 500 !important; border-bottom-width: 1px; border-bot=
+tom-color: #ddd; border-bottom-style: solid;">xero-node 13.0</a> =E2=80=93 =
+Node SDK for the <em>Xero</em> accounting=C2=A0system.</p>
+</li>
+<li style=3D"color: #222; line-height: 1.35em; margin-bottom: 12px; margin-=
+left: 0px !important;">
+<p style=3D"margin-top: 0.6em; margin-bottom: 0.8em;"><a href=3D"https://no=
+deweekly.com/link/171142/3f65fd1f6e" style=3D"text-decoration: none; color:=
+ #20824B; font-weight: 500 !important; border-bottom-width: 1px; border-bot=
+tom-color: #ddd; border-bottom-style: solid;">Mineflayer 4.30</a> =E2=80=93=
+ Create Minecraft bots in=C2=A0JavaScript.</p>
+</li>
+<li style=3D"color: #222; line-height: 1.35em; margin-bottom: 12px; margin-=
+left: 0px !important;">
+<p style=3D"margin-top: 0.6em; margin-bottom: 0.8em;"><a href=3D"https://no=
+deweekly.com/link/171143/3f65fd1f6e" style=3D"text-decoration: none; color:=
+ #20824B; font-weight: 500 !important; border-bottom-width: 1px; border-bot=
+tom-color: #ddd; border-bottom-style: solid;">Undici 7.11</a> =E2=80=93 Nod=
+e's powerful HTTP client=C2=A0library.</p>
+</li>
+</ul>
+</td></tr></table>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-c=
+ollapse: collapse;"><tr><td style=3D"height: 4px; font-family: -apple-syste=
+m,BlinkMacSystemFont,Helvetica,sans-serif; font-size: 15px; line-height: 1.=
+48em; border-collapse: collapse;"></td></tr></table>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"el-subta=
+ble classifieds" style=3D"background-color: #ffffee; margin-top: 15px; box-=
+shadow: 6px 6px 0px #eee; border-collapse: collapse; border-top-width: 1px;=
+ border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px;=
+ border-top-color: #eec; border-right-color: #eec; border-bottom-color: #ee=
+c; border-left-color: #eec; border-top-style: solid; border-right-style: so=
+lid; border-bottom-style: solid; border-left-style: solid;"><tr><td style=
+=3D"font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; fon=
+t-size: 15px; line-height: 1.48em; border-collapse: collapse; padding-top: =
+0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px;">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-c=
+ollapse: collapse; margin-top: 0 !important;"><tr><td style=3D"height: 4px;=
+ font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; font-s=
+ize: 15px; line-height: 1.48em; border-collapse: collapse;"></td></tr></tab=
+le>
+<!-- normal content section -->
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"content =
+el-content " style=3D"color: #222; border-collapse: collapse;"><tr><td styl=
+e=3D"font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; fo=
+nt-size: 15px; line-height: 1.48em; border-collapse: collapse; padding-top:=
+ 0px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px;">
+<p style=3D"font-size: 1.2em; text-transform: uppercase; font-weight: 600; =
+display: inline-block; margin-bottom: 8px; margin-top: 0.8em;">=F0=9F=93=B0=
+=C2=A0Classifieds</p>
+</td></tr></table>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"content =
+el-md " style=3D"border-collapse: collapse;"><tr><td style=3D"font-family: =
+-apple-system,BlinkMacSystemFont,Helvetica,sans-serif; font-size: 15px; lin=
+e-height: 1.48em; border-collapse: collapse; padding-top: 0px; padding-righ=
+t: 15px; padding-bottom: 0px; padding-left: 15px;">
+<p style=3D"margin-top: 0.6em; margin-bottom: 0.8em;">=F0=9F=90=B1 <a href=
+=3D"https://nodeweekly.com/link/171144/3f65fd1f6e" style=3D"text-decoration=
+: none; color: #20824B; font-weight: 500 !important; border-bottom-width: 1=
+px; border-bottom-color: #9c9; border-bottom-style: solid;">ConfigCat Featu=
+re Flag Service</a> lets you run gradual rollouts, A/B tests &amp; target u=
+sers without code changes. Use coupon NODE25 &amp; save=C2=A025%!</p>
+<hr style=3D"border-top-width: 0; border-right-width: 0; border-left-width:=
+ 0; border-bottom-width: 1px; border-bottom-color: #dda; border-bottom-styl=
+e: solid; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; paddin=
+g-left: 2px;">
+<p style=3D"margin-top: 0.8em; margin-bottom: 0.8em;">=F0=9F=8E=A7 The Node=
+ (and more) Banter =E2=80=93 a weekly, uncensored dive into Node and scale,=
+ where Luca Maraschi and Matteo Collina share war stories, anti-patterns, a=
+nd laughs.=C2=A0<a href=3D"https://nodeweekly.com/link/171145/3f65fd1f6e" s=
+tyle=3D"text-decoration: none; color: #20824B; font-weight: 500 !important;=
+ border-bottom-width: 1px; border-bottom-color: #9c9; border-bottom-style: =
+solid;">Subscribe!</a></p>
+</td></tr></table>
+</td></tr></table>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-c=
+ollapse: collapse;"><tr><td style=3D"height: 10px; font-family: -apple-syst=
+em,BlinkMacSystemFont,Helvetica,sans-serif; font-size: 15px; line-height: 1=
+.48em; border-collapse: collapse;"></td></tr></table>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"el-headi=
+ng" style=3D"background-color: none !important; text-align: left; margin-to=
+p: 15px; color: #333333; border-collapse: collapse;"><tr><td style=3D"font-=
+family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; font-size: 1=
+5px; line-height: 1.48em; border-collapse: collapse; padding-top: 0; paddin=
+g-right: 0; padding-bottom: 0; padding-left: 0;"><p style=3D"font-size: 1.6=
+em !important; font-weight: 400 !important; text-transform: none !important=
+; line-height: 1.4em; display: inline-block; border-bottom-width: 8px; bord=
+er-bottom-color: #f4f4f4; border-bottom-style: solid; margin-top: 0.5em; ma=
+rgin-right: 0; margin-bottom: 0.5em; margin-left: 0;">=F0=9F=93=A2=C2=A0 El=
+sewhere in JavaScript</p></td></tr></table>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"content =
+el-md " style=3D"border-collapse: collapse;"><tr><td style=3D"font-family: =
+-apple-system,BlinkMacSystemFont,Helvetica,sans-serif; font-size: 15px; lin=
+e-height: 1.48em; border-collapse: collapse; padding-top: 0px; padding-righ=
+t: 15px; padding-bottom: 0px; padding-left: 15px;">
+<p style=3D"margin-top: 0.6em; margin-bottom: 0.8em;">A roundup of some oth=
+er interesting stories in the broader JavaScript landscape, in case you've =
+missed them:</p>
+<ul>
+<li style=3D"color: #222; line-height: 1.35em; margin-bottom: 12px; margin-=
+left: 0px !important;">
+<p style=3D"margin-top: 0.6em; margin-bottom: 0.8em;">The Deno team takes <=
+a href=3D"https://nodeweekly.com/link/171146/3f65fd1f6e" style=3D"text-deco=
+ration: none; color: #20824B; font-weight: 500 !important; border-bottom-wi=
+dth: 1px; border-bottom-color: #ddd; border-bottom-style: solid;">a look at=
+ what's coming to JavaScript</a> with some quick explainers and sample code=
+ covering nine proposals advanced at recent TC39=C2=A0meetings.</p>
+</li>
+<li style=3D"color: #222; line-height: 1.35em; margin-bottom: 12px; margin-=
+left: 0px !important;">
+<p style=3D"margin-top: 0.6em; margin-bottom: 0.8em;">=F0=9F=90=98 <a href=
+=3D"https://nodeweekly.com/link/171147/3f65fd1f6e" style=3D"text-decoration=
+: none; color: #20824B; font-weight: 500 !important; border-bottom-width: 1=
+px; border-bottom-color: #ddd; border-bottom-style: solid;">PLJS</a> is an =
+extension for Postgres for writing database functions in JavaScript (powere=
+d by QuickJS) instead of=C2=A0PL/pgSQL.</p>
+</li>
+<li style=3D"color: #222; line-height: 1.35em; margin-bottom: 12px; margin-=
+left: 0px !important;">
+<p style=3D"margin-top: 0.6em; margin-bottom: 0.8em;"><a href=3D"https://no=
+deweekly.com/link/171148/3f65fd1f6e" style=3D"text-decoration: none; color:=
+ #20824B; font-weight: 500 !important; border-bottom-width: 1px; border-bot=
+tom-color: #ddd; border-bottom-style: solid;">The speaker lineup for JSConf=
+ 2025</a> has been announced. It takes place in Maryland this=C2=A0October.=
+</p>
+</li>
+<li style=3D"color: #222; line-height: 1.35em; margin-bottom: 12px; margin-=
+left: 0px !important;">
+<p style=3D"margin-top: 0.6em; margin-bottom: 0.8em;">If Cloudflare Workers=
+ are just too limited for your use case, Cloudflare now has a new option: <=
+a href=3D"https://nodeweekly.com/link/171149/3f65fd1f6e" style=3D"text-deco=
+ration: none; color: #20824B; font-weight: 500 !important; border-bottom-wi=
+dth: 1px; border-bottom-color: #ddd; border-bottom-style: solid;">Cloudflar=
+e Containers</a>. <em>Containers</em> is integrated with Workers but, unsur=
+prisingly, lets you package up your app in container images and run them in=
+ a flexible=C2=A0way.</p>
+</li>
+<li style=3D"color: #222; line-height: 1.35em; margin-bottom: 12px; margin-=
+left: 0px !important;">
+<p style=3D"margin-top: 0.6em; margin-bottom: 0.8em;">Alex Kladov shows <a =
+href=3D"https://nodeweekly.com/link/171150/3f65fd1f6e" style=3D"text-decora=
+tion: none; color: #20824B; font-weight: 500 !important; border-bottom-widt=
+h: 1px; border-bottom-color: #ddd; border-bottom-style: solid;">how easy it=
+ is to create a server-side statically generated RSS feed reader</a> =E2=80=
+=93 he uses Deno, but you could quite easily use Node here=C2=A0too.</p>
+</li>
+<li style=3D"color: #222; line-height: 1.35em; margin-bottom: 12px; margin-=
+left: 0px !important;">
+<p style=3D"margin-top: 0.6em; margin-bottom: 0.8em;">=F0=9F=95=92 <a href=
+=3D"https://nodeweekly.com/link/171151/3f65fd1f6e" style=3D"text-decoration=
+: none; color: #20824B; font-weight: 500 !important; border-bottom-width: 1=
+px; border-bottom-color: #ddd; border-bottom-style: solid;">The Temporal AP=
+I proposal</a> is now a Stage 3=C2=A0Draft.</p>
+</li>
+</ul>
+</td></tr></table>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-c=
+ollapse: collapse;"><tr><td style=3D"height: 18px; font-family: -apple-syst=
+em,BlinkMacSystemFont,Helvetica,sans-serif; font-size: 15px; line-height: 1=
+.48em; border-collapse: collapse;"></td></tr></table>
+
+<table class=3D"footer noarchive" width=3D"100%" cellpadding=3D"0" cellspac=
+ing=3D"0" style=3D"border-top-width: 3px; border-top-color: #dddddd; border=
+-top-style: solid; border-collapse: collapse;"><tr><td style=3D"font-family=
+: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; font-size: 15px; l=
+ine-height: 1.48em; border-collapse: collapse; padding-top: 10px; padding-r=
+ight: 15px; padding-bottom: 10px; padding-left: 15px;">
+      =20
+        <p style=3D"line-height: 1.3em; margin-top: 1em; margin-right: 0; m=
+argin-bottom: 1em; margin-left: 0;"><strong style=3D"text-transform: upperc=
+ase; font-weight: 600;">Got a link for us?</strong> Reply and tell us. We c=
+an't include everything but we'll look at anything you send. <em>Thanks!</e=
+m></p>
+
+<hr style=3D"width: 60px; margin-left: 0; border-right-width: 0; border-bot=
+tom-width: 0; border-left-width: 0; border-top-width: 2px; border-top-color=
+: #ddd; border-top-style: solid;">
+      =20
+        <p style=3D"margin-top: 1em; margin-right: 0; margin-bottom: 1em; m=
+argin-left: 0;"><strong style=3D"text-transform: uppercase; font-weight: 60=
+0;">Sponsorship:</strong> Email <code><a href=3D"mailto:kristina@cooperpres=
+s.com" style=3D"color: #000; text-decoration: none;">kristina@cooperpress.c=
+om</a></code> for details.</p>
+       =20
+        <hr style=3D"width: 60px; margin-left: 0; border-right-width: 0; bo=
+rder-bottom-width: 0; border-left-width: 0; border-top-width: 4px; border-t=
+op-color: #6ca629; border-top-style: solid;">
+      <p style=3D"font-size: 12px; line-height: 18px; margin-top: 1em; marg=
+in-right: 0; margin-bottom: 1em; margin-left: 0;">Published by Cooper Press=
+ Ltd.<br>Fairfield Enterprise Centre, Louth, LN11 0LS, United Kingdom</p>
+        <p style=3D"font-size: 0.9em; margin-top: 1em; margin-right: 0; mar=
+gin-bottom: 1em; margin-left: 0;"><a href=3D"https://nodeweekly.com/leave/3=
+f65fd1f6e" style=3D"text-decoration: underline; color: #20824B;">Cancel you=
+r subscription</a> or <a href=3D"https://nodeweekly.com/edit_subscription/3=
+f65fd1f6e" style=3D"text-decoration: underline; color: #20824B;">change you=
+r address</a>.</p>
+       =20
+</td></tr></table>
+</div>
+  </td></tr>
+</table>
+<!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+<div id=3D"footer" class=3D"noarchive">
+    =20
+  </div>
+<!-- hey --><img src=3D"https://nodeweekly.com/open/584/3f65fd1f6e" width=
+=3D"3" height=3D"1" alt=3D"n" /><!-- hey --></body>
+</html>
+
+--a8666fafdf289c58742a2269e7f33431ac32b1839875d9801f37fde6edca--
