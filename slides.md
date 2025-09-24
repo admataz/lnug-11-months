@@ -65,9 +65,7 @@ css: unocss
 
 
 
-# London Node User Group
-
-![](./lnug-logo.svg){width=30% style="display:inline"}
+![](/lnug-logo.svg){width=30% style="display:inline"}
 
 ## November 2024 - August 2025
 
@@ -82,65 +80,91 @@ A fictional but thoroughly researched meetup schedule
 </div>
 
 ---
-layout: two-cols
+layout: default
 transition: fade-out
 ---
 
-<div class="text-sm">
+<div class="grid grid-cols-3 gap-4 text-xs">
+
+<div>
 
 #### [November 2024 🍂](/3)
 **Node.js 23 & Express 5.x Revival**
 - Native ESM + require() support
 - Express rises from security audit
+</div>
+
+
+<div>
 
 #### [December 2024 🎄](/6) 
 **Database & Module Harmony**
 - Hidden SQLite in Node.js runtime
 - First LTS with require(esm)
+</div>
+
+<div>
 
 #### [January 2025 ❄️](/9)
 **TypeScript Takes Center Stage**
 - Native TS support arrives
 - pnpm 10.0 security revolution
 
+</div>
+
+<div>
+
 #### [February 2025 💝](/12)
 **Evolution & Security Lessons**
 - TypeScript 5.8 for Node devs
 - npm's "annus horribilis" analysis
+</div>
+
+<div>
 
 #### [March 2025 🌸](/15)
 **APIs & Infrastructure Security**
 - URLPattern API goes global
 - Node.js CI gets compromised
-
-
-
 </div>
 
-::right::
-
-<div class="text-sm">
+<div>
 
 #### [April 2025 🌱](/18)
 **AI Tooling & Performance Wars**
 - VS Code + AI productivity boost
 - Fastify vs Next.js showdown
 
+</div>
+
+<div>
 
 #### [May 2025 🌺](/21)
 **Version Leaps & Bridges**
 - Node 24 worth your attention
 - php-node: when worlds collide
+</div>
+
+<div>
 
 #### [June 2025 ☀️](/24)
-**Production Ready Standards**
+**Performance Revolution & TypeScript Maturity**
 - Amaro 1.0 TypeScript engine
-- ECMAScript 2025 approved
+- JSON.stringify gets 2x faster
+</div>
+
+<div>
 
 #### [July 2025 🏖️](/27)
 **Parallelism & Defense**
 - Worker threads go production
 - npm attack prevention playbook
+
+</div>
+
+
+
+<div>
 
 #### [August 2025 🌻](/30)
 **Standards & Lifecycle**
@@ -148,13 +172,14 @@ transition: fade-out
 - Node 18 EOL reality check
 
 </div>
+</div>
 
 
 ---
 transition: fade-out
 ---
 
-![](./lnug-logo.svg){width=100px style="display:inline"}
+![](/lnug-logo.svg){width=100px style="display:inline"}
 
 # November 2024 🍂
 
@@ -269,7 +294,7 @@ Speaker Notes:
 ---
 transition: fade-out
 ---
-![](./lnug-logo.svg){width=100px style="display:inline"}
+![](/lnug-logo.svg){width=100px style="display:inline"}
 
 # December 2024 🎄
 
@@ -332,8 +357,8 @@ Live demo: Build a URL shortener with zero external dependencies (except the dom
 ![alt text](/image-3.png)
 
 ### 📚 Source References
-- Built-in SQLite native library in Node.js
-- November development notes
+- [SQLite | Node.js v24.8.0 Documentation](https://nodejs.org/api/sqlite.html#sqlite) 
+
 
 </div>
 
@@ -391,7 +416,7 @@ Speaker Notes:
 transition: fade-out
 ---
 
-![](./lnug-logo.svg){width=100px style="display:inline"}
+![](/lnug-logo.svg){width=100px style="display:inline"}
 
 # January 2025 ❄️
 
@@ -522,7 +547,7 @@ Speaker Notes:
 transition: fade-out
 ---
 
-![](./lnug-logo.svg){width=100px style="display:inline"}
+![](/lnug-logo.svg){width=100px style="display:inline"}
 
 # February 2025 💝
 
@@ -645,7 +670,7 @@ Speaker Notes:
 transition: fade-out
 ---
 
-![](./lnug-logo.svg){width=100px style="display:inline"}
+![](/lnug-logo.svg){width=100px style="display:inline"}
 
 # March 2025 🌸
 
@@ -769,7 +794,7 @@ Speaker Notes:
 transition: fade-out
 ---
 
-![](./lnug-logo.svg){width=100px style="display:inline"}
+![](/lnug-logo.svg){width=100px style="display:inline"}
 
 
 # April 2025 🌱
@@ -893,7 +918,7 @@ Speaker Notes:
 transition: fade-out
 ---
 
-![](./lnug-logo.svg){width=100px style="display:inline"}
+![](/lnug-logo.svg){width=100px style="display:inline"}
 
 
 # May 2025 🌺
@@ -1013,7 +1038,7 @@ Speaker Notes:
 ---
 transition: fade-out
 ---
-![](./lnug-logo.svg){width=100px style="display:inline"}
+![](/lnug-logo.svg){width=100px style="display:inline"}
 
 
 # June 2025 ☀️
@@ -1033,13 +1058,13 @@ transition: fade-out
 </div>
 <div>
 
-### Talk 2: ECMAScript 2025
-**The JavaScript Features You'll Actually Use**
+### Talk 2: JSON.stringify Revolution
+**How V8 Made JSON Serialization 2x Faster**
 
-**Speaker:** Dr. Mikhail Petrov (TC39 Committee Observer)
+**Speaker:** Dr. Patricia Singh (V8 Performance Engineer at Google)
 
 <div class="abstractbox" >
-<em>ECMAScript 2025 was approved by Ecma International, bringing new language features to JavaScript. Mikhail highlights the practical additions that will impact Node.js development, explains the standardization process, and demonstrates features you can start using today.</em>
+<em>V8's latest optimization makes JSON.stringify over twice as fast, providing automatic performance boosts for API responses, caching, and data serialization. Patricia breaks down the technical improvements, demonstrates real-world impact, and shows how to take advantage of this free performance win in your Node.js applications.</em>
 </div>
 
 </div>
@@ -1093,46 +1118,55 @@ Speaker Notes:
 layout: two-cols
 ---
 
-# ECMAScript 2025: The JavaScript Features You'll Actually Use
+# JSON.stringify Revolution: How V8 Made JSON Serialization 2x Faster
 
-**Speaker:** Dr. Mikhail Petrov (TC39 Committee Observer)  
+**Speaker:** Dr. Patricia Singh (V8 Performance Engineer at Google)  
 
 
-## 📜 Standards Evolution
+## ⚡ The Performance Revolution
 
-**ECMAScript 2025** approved by Ecma International
+**V8 optimizations make JSON.stringify over 2x faster**
 
-## 🌟 Practical Additions
-- New language features for Node.js development
-- Standardization process insights
-- Features you can use today
+## 🚀 Automatic Benefits
+- API responses get instant speed boost
+- Caching operations accelerate
+- Data serialization overhead reduced
+- Zero code changes required
 
-## 🔄 Language Evolution Impact
-How standards changes affect the Node.js ecosystem
+## � Technical Deep-dive
+- V8 engine optimizations explained
+- Benchmark comparisons
+- Real-world performance impact
+
+## 💼 Business Impact
+Free performance improvements for all Node.js applications using JSON serialization
 
 ::right::
 
 <div class="references-panel">
 
+![alt text](/image-18.png)
+
 ### 📚 Source References
-- [Ecma International Approves ECMAScript 2025: What's New?](https://2ality.com/2025/06/ecmascript-2025.html)
-- [ECMAScript 2025 specification](https://tc39.es/ecma262/2025/)
+- [How V8 is Making JSON.stringify More Than Twice as Fast](https://v8.dev/blog/json-stringify)
+- V8 performance engineering team blog
+- Node.js performance benchmarks
 
 </div>
 
 <!--
 Speaker Notes:
 
-**Abstract:** ECMAScript 2025 was approved by Ecma International, bringing new language features to JavaScript. Mikhail highlights the practical additions that will impact Node.js development, explains the standardization process, and demonstrates features you can start using today.
+**Abstract:** V8's latest optimization makes JSON.stringify over twice as fast, providing automatic performance boosts for API responses, caching, and data serialization. Patricia breaks down the technical improvements, demonstrates real-world impact, and shows how to take advantage of this free performance win in your Node.js applications.
 
-**Standards Deep-dive:** How language evolution affects the Node.js ecosystem.
+**Performance Focus:** Live benchmarking showing before/after performance comparisons and practical optimization techniques.
 -->
 
 ---
 transition: fade-out
 ---
 
-![](./lnug-logo.svg){width=100px style="display:inline"}
+![](/lnug-logo.svg){width=100px style="display:inline"}
 
 
 # July 2025 🏖️
@@ -1191,6 +1225,8 @@ Real-world use cases and implementation strategies
 
 <div class="references-panel">
 
+![alt text](/image-19.png)
+
 ### 📚 Source References
 - [Modern Node.js Patterns - Worker Threads: True Parallelism](https://kashw1n.com/blog/nodejs-2025/)
 
@@ -1230,6 +1266,8 @@ Actionable strategies for protecting development workflows
 
 <div class="references-panel">
 
+![alt text](/image-20.png)
+
 ### 📚 Source References
 - [A Major Supply Chain Attack Hits the npm Ecosystem](https://socket.dev)
 - [Chalk package compromise](https://socket.dev)
@@ -1250,7 +1288,7 @@ Speaker Notes:
 transition: fade-out
 ---
 
-![](./lnug-logo.svg){width=100px style="display:inline"}
+![](/lnug-logo.svg){width=100px style="display:inline"}
 
 
 # August 2025 🌻
@@ -1310,6 +1348,8 @@ How Node.js's web compatibility strategy affects applications
 
 <div class="references-panel">
 
+![alt text](/image-21.png)
+
 ### 📚 Source References
 - [Node.js v24.6.0 (Current) Released](https://nodejs.org/en/blog/release/v24.6.0)
 - [Modern Node.js Patterns - Built-in Web APIs](https://kashw1n.com/blog/nodejs-2025/)
@@ -1348,6 +1388,8 @@ Managing Node.js version lifecycles in business environments
 ::right::
 
 <div class="references-panel">
+
+![alt text](/image-22.png)
 
 ### 📚 Source References
 - [PSA: Beware of End-of-Life Node.js Versions](https://nodejs.org/en/blog/announcements/node-18-eol-support)
